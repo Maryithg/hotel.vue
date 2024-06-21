@@ -1,15 +1,16 @@
 <template>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <div class="home">
     <section class="welcome">
-      <h1>Bienvenidos! <br>
-        Hotel Serenidad
-      </h1>
-      <img src="/img/hotel.jpeg" alt="Hotel">
-      <p>Disfruta de nuestros servicios de primera categoría, que incluyen piscinas, restaurantes, spas y mucho más.</p>
-      <button @click="exploreMore">Descubre más opciones.</button>
+      <div class="welcome-text">
+        <h1>Bienvenidos a <br> Hotel Serenidad</h1>
+        <p>Disfruta de una estancia inolvidable con nuestras instalaciones de lujo.</p>
+        <button @click="exploreMore">Descubre más <i class="fas fa-chevron-right"></i></button>
+      </div>
+      <div class="welcome-image">
+        <img src="/img/hotel.jpeg" alt="Hotel Serenidad">
+      </div>
     </section>
   </div>
 </template>
@@ -23,6 +24,7 @@ export default {
   }
 }
 </script>
+
 <style scoped>
 .home {
   background-color: #f5f5f5;
@@ -34,41 +36,42 @@ export default {
 }
 
 .welcome {
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  padding: 40px;
-  text-align: center;
-  max-width: 800px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 100px;
+  max-width: 1400px;
   width: 100%;
 }
 
+.welcome-text {
+  flex: 1;
+  text-align: left;
+}
+
 .welcome h1 {
-  font-size: 2.5em;
+  font-size: 3em;
   color: #333;
   margin-bottom: 20px;
   font-family: "Merriweather", serif;
-  font-weight: 750;
-  font-style: normal;
-}
-
-.welcome img {
-  max-width: 100%;
-  border-radius: 10px;
-  margin-bottom: 20px;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 .welcome p {
   font-size: 1.2em;
   color: #666;
-  line-height: 1.5;
+  line-height: 1.6;
   margin-bottom: 30px;
 }
 
 button {
   background: linear-gradient(90deg, rgb(1, 66, 112) 0%, rgb(1, 101, 168) 50%, rgb(23, 151, 243) 100%);
   color: white;
-  padding: 10px 20px;
+  padding: 12px 24px;
   border: none;
   border-radius: 5px;
   font-size: 1.1em;
@@ -77,6 +80,35 @@ button {
 }
 
 button:hover {
-  transform: translateY(-2px);
+  background-color: #0968a4;
+  transform: translateY(-3px);
+}
+
+button i {
+  margin-left: 5px;
+}
+
+.welcome-image {
+  flex: 1;
+  margin-left: 40px;
+  text-align: center;
+}
+
+.welcome-image img {
+  max-width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .welcome {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .welcome-text, .welcome-image {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 </style>

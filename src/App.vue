@@ -3,9 +3,9 @@
     <nav>
       <router-link to="/">Inicio</router-link>
       <router-link to="/rooms">Habitaciones</router-link>
-      <router-link to="/contact">Contacto</router-link>
-      <router-link to="/extreme-sports">Deportes Extremos</router-link>
       <router-link to="/services">Servicios</router-link>
+      <router-link to="/extreme-sports">Deportes Extremos</router-link>
+      <router-link to="/contact">Contacto</router-link>
     </nav>
     <router-view />
   </div>
@@ -32,6 +32,7 @@ nav {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   position: fixed;
   width: 100%;
+  left: 0;
   top: 0;
   z-index: 1000;
   font-size: 20px;
@@ -41,7 +42,7 @@ nav a {
   color: white;
   text-decoration: none;
   margin: 0 15px;
-  font-size: 1.1em;
+  font-size: 1.2em;
   padding: 10px 15px;
   border-radius: 5px;
   transition: background-color 0.3s, transform 0.3s;

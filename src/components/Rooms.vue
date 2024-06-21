@@ -18,7 +18,7 @@
         <div class="details-top">
           <h2>{{ room.type }}</h2>
           <div class="room-icons">
-            <i class="fas fa-bed"></i> {{ room.capacity }} personas
+            <i class="fas fa-bed"></i>&nbsp; &nbsp; {{ room.capacity }} Personas
           </div>
         </div>
         <p>{{ room.description }}</p>
@@ -97,6 +97,7 @@ export default {
   margin-bottom: 40px;
   font-family: "Merriweather", serif;
   font-weight: 750;
+  
 }
 
 .room {

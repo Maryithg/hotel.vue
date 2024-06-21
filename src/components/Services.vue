@@ -1,4 +1,5 @@
 <template>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <div class="services">
     <h1>Servicios</h1>
     <div class="service-card" v-for="service in services" :key="service.name" @click="showImage(service)">
@@ -14,8 +15,6 @@
         <div class="modal-content" @click.stop>
           <span class="close" @click="closeModal">&times;</span>
           <img :src="selectedService.image" :alt="selectedService.name">
-          <h2>{{ selectedService.name }}</h2>
-          <p>{{ selectedService.description }}</p>
         </div>
       </transition>
     </div>
@@ -28,10 +27,10 @@ export default {
   data() {
     return {
       services: [
-        { name: 'Piscina', description: 'Disfruta de nuestra piscina al aire libre.', icon: 'fas fa-swimming-pool', image: 'path/to/piscina.jpg', color: '#17a2b8' },
-        { name: 'Spa', description: 'Relájate y rejuvenece en nuestro spa.', icon: 'fas fa-spa', image: '../../assets/imagenSpa.jpg', color: '#28a745' },
-        { name: 'Restaurante', description: 'Degusta deliciosas comidas en nuestro restaurante.', icon: 'fas fa-utensils', image: 'path/to/restaurante.jpg', color: '#dc3545' },
-        { name: 'Gimnasio', description: 'Mantente en forma en nuestro gimnasio bien equipado.', icon: 'fas fa-dumbbell', image: 'path/to/gimnasio.jpg', color: '#ffc107' }
+        { name: 'Piscina', description: 'Disfruta de nuestra piscina al aire libre.', icon: 'fas fa-swimming-pool', image: '/img/piscina.jpg', color: '#007bff' },
+        { name: 'Spa', description: 'Relájate y rejuvenece en nuestro spa.', icon: 'fas fa-spa', image: '/img/spa.jpg', color: '#28a745' },
+        { name: 'Restaurante', description: 'Degusta deliciosas comidas en nuestro restaurante.', icon: 'fas fa-utensils', image: '/img/restaurante.jpg', color: '#dc3545' },
+        { name: 'Gimnasio', description: 'Mantente en forma en nuestro gimnasio bien equipado.', icon: 'fas fa-dumbbell', image: '/img/gym.jpg', color: '#ffc107' }
       ],
       selectedService: null
     }
@@ -81,7 +80,6 @@ export default {
 }
 
 .service-icon {
-  background-color: #17a2b8;
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -134,7 +132,10 @@ export default {
 }
 
 .modal-content img {
-  max-width: 100%;
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  object-fit: cover;
   border-radius: 10px;
   margin-bottom: 20px;
 }
